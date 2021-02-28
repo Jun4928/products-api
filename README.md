@@ -46,6 +46,14 @@ yarn
 > create database dev_matching character set utf8mb4 collate utf8mb4_general_ci;
 ```
 
+#### 0. Prisma Client 생성하기
+
+> 프로젝트 최상위 디텍토리에서 아래 명령어 실행
+
+```
+npx prisma generate
+```
+
 #### 1. .env 파일 작성하기
 
 > 프로젝트 최상위 디렉토리에 있는 example 파일 복사하기
@@ -68,6 +76,14 @@ ex) DATABASE_URL="mysql://me:me123@localhost:3306/dev_matching"
 
 ```
 npx prisma migrate dev --preview-feature
+```
+
+#### 3. 데이터베이스에 데이터 넣기
+
+> prisma cli 로 데이터 집어넣기
+
+```
+npx prisma db seed --preview-feature
 ```
 
 ## Endpoints
