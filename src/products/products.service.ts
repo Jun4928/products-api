@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
 import { Product } from '@prisma/client';
-import { SearchProductsQuery } from 'src/dto/search-products.query';
+import { SearchProductsQuery } from './dto/search-products.query';
 
 @Injectable()
 export class ProductsService {
