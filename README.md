@@ -97,6 +97,17 @@ yarn start:dev
 
 ## Endpoints
 
+- /products
+- /products/:id
+- /products/search
+
+```
+offset
+limit
+name
+description
+```
+
 ## Copyrights
 
 - imags: Unsplash
