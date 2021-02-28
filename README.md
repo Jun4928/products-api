@@ -86,6 +86,15 @@ npx prisma migrate dev --preview-feature
 npx prisma db seed --preview-feature
 ```
 
+## Server Start
+
+> 프로젝트 최상위 디렉토리에서
+
+```
+npx prisma generate
+yarn start:dev
+```
+
 ## Endpoints
 
 ## Copyrights
