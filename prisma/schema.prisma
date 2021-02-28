@@ -1,0 +1,18 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id          Int    @id @default(autoincrement())
+  name        String @db.VarChar(50)
+  cost        Int
+  image_url   String @db.VarChar(1000)
+  description String @db.VarChar(200)
+
+  @@map(name: "products")
+}
