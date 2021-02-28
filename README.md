@@ -38,6 +38,14 @@
 yarn
 ```
 
+#### 0. 데이터베이스 생성하기
+
+> mysql cli 진입 후 아래 명령어 입력
+
+```
+> create database dev_matching character set utf8mb4 collate utf8mb4_general_ci;
+```
+
 #### 1. .env 파일 작성하기
 
 > 프로젝트 최상위 디렉토리에 있는 example 파일 복사하기
@@ -51,7 +59,7 @@ cp .env.example .env
 ```
 DATABASE_URL="DB://DB_USER:DB_PASSWORD@HOST:PORT/DB_NAME"
 
-ex) DATABASE_URL="mysql://me:me123@localhost:3306/rabbit_turtle"
+ex) DATABASE_URL="mysql://me:me123@localhost:3306/dev_matching"
 ```
 
 #### 2. 마이그레이션
