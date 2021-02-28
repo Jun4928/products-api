@@ -16,15 +16,27 @@ export class ProductsService {
   }
 
   async searchProducts(query: SearchProductsQuery): Promise<Product[]> {
-    const { offset, limit, description, name } = query;
+    const { offset, limit, ...rest } = query;
+    const where = this.getSearchOption(rest);
 
     return this.prisma.product.findMany({
-      where: {
-        name: { contains: name },
-        description: { contains: description },
-      },
-      skip: offset || 0,
-      take: limit || 30,
+      where,
+      skip: Number(offset) || 0,
+      take: Number(limit) || 30,
     });
+  }
+
+  private getSearchOption(
+    query: Omit<SearchProductsQuery, 'offset' | 'limit'>,
+  ) {
+    const mapper = {
+      name: { contains: query.name },
+      description: { contains: query.description },
+    };
+
+    return Object.keys(query).reduce((acc, key) => {
+      acc[key] = mapper[key];
+      return acc;
+    }, {});
   }
 }

@@ -1,6 +1,5 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { Product } from '@prisma/client';
-import { get } from 'http';
 import { SearchProductsQuery } from 'src/dto/search-products.query';
 import { ProductsService } from './products.service';
 
