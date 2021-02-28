@@ -28,6 +28,40 @@
 
 ## Database 구축하기
 
+### Prisma Migration
+
+#### 0. 노드 모듈 설치하기
+
+> 프로젝트 최상위 디렉토리에서 yarn 실행
+
+```
+yarn
+```
+
+#### 1. .env 파일 작성하기
+
+> 프로젝트 최상위 디렉토리에 있는 example 파일 복사하기
+
+```
+cp .env.example .env
+```
+
+> Prisma 와 연결 할 데이터베이스 URL 본인의 개발 환경에 맞게 설정하기
+
+```
+DATABASE_URL="DB://DB_USER:DB_PASSWORD@HOST:PORT/DB_NAME"
+
+ex) DATABASE_URL="mysql://me:me123@localhost:3306/rabbit_turtle"
+```
+
+#### 2. 마이그레이션
+
+> 프로젝트 최상위 디렉토리에서 마이그레이션 CLI 실행하기
+
+```
+npx prisma migrate dev --preview-feature
+```
+
 ## Endpoints
 
 ## Copyrights
